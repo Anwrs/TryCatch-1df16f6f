@@ -36,5 +36,6 @@ try {
 
 catch (Exception $e) {
     echo 'Foutmeldig gevonden: ',  $e->getMessage(), "\n";
+    error_log("Gebruiker heeft fout getal opgegeven", 0);
 }
 ?>

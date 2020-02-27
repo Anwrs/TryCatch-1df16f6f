@@ -11,7 +11,7 @@
         <h1>Skeelers <small>(#3)</small></h1>
 
         <!-- maak hier de opdracht -->
-        <form action="cart.php" method="get" style="display: flex; height: 30px; align-items: center">
+        <form action="my_error.php" method="get" style="display: flex; height: 30px; align-items: center">
         <h2>Keuze:</h2>
         <input type="number" name="number" id="">
         <button type="submit">Submit</button>
@@ -25,15 +25,14 @@
 session_start();
 
 try {
-    if(($_GET["number"] > 0) && ($_GET["number"] < 4)) {
-        if(isset($_GET["number"])) {
-            $_SESSION["keuze"] = $_GET["keuze"];
+    if (($_GET["number"] > 0) && ($_GET["number"] < 4)) {
+            $_SESSION["keuze"] = $_GET["number"];
             echo "Gekozen item: " . $_SESSION["keuze"];                                                         
         } else {
             throw new Exception("ongeldig getal");
-        }
     }
 }
+
 
 catch (Exception $e) {
     echo 'Foutmeldig gevonden: ',  $e->getMessage(), "\n";
